@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 //create schema
-const mongoCategorySchema = mongoose.Schema(
+const mongoDBBrandSchema = mongoose.Schema(
   {
     name: {
       type: String,
@@ -34,4 +34,4 @@ const mongoCategorySchema = mongoose.Schema(
 );
 
 //export
-export default mongoose.model("catagory", mongoCategorySchema);
+export default mongoose.model("brand", mongoDBBrandSchema);

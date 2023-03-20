@@ -2,7 +2,7 @@
 import catagory from "../models/catagory.js";
 
 //get all products
-export const getAllProducts = async (req, res) => {
+export const getAllProducts = async (req, res, next) => {
   try {
     const data = await catagory.find();
     res.status(200).json({
@@ -10,12 +10,12 @@ export const getAllProducts = async (req, res) => {
       message: "successfully data done",
     });
   } catch (error) {
-    console.log(`${error.message}`.bgRed.random);
+    next(error);
   }
 };
 
 //post all products
-export const postAllProducts = async (req, res) => {
+export const postAllProducts = async (req, res, next) => {
   try {
     const { name, slug } = req.body;
     const data = await catagory.create({
@@ -28,12 +28,12 @@ export const postAllProducts = async (req, res) => {
       message: "successfully upload products",
     });
   } catch (error) {
-    console.log(`${error.message}`.bgRed.random);
+    next(error);
   }
 };
 
 //Single products
-export const singleProducts = async (req, res) => {
+export const singleProducts = async (req, res, next) => {
   try {
     const { slug } = req.params;
     const data = await catagory.findOne({ slug });
@@ -42,12 +42,12 @@ export const singleProducts = async (req, res) => {
       message: "successfully single data done",
     });
   } catch (error) {
-    console.log(`${error.message}`.bgRed.blue);
+    next(error);
   }
 };
 
 //Delate products
-export const delateProducts = async (req, res) => {
+export const delateProducts = async (req, res, next) => {
   try {
     const { id } = req.params;
     const data = await catagory.findByIdAndDelete(id);
@@ -55,12 +55,12 @@ export const delateProducts = async (req, res) => {
       message: "successfully Delate data",
     });
   } catch (error) {
-    console.log(`${error.message}`.bgRed.random);
+    next(error);
   }
 };
 
 //updata products data
-export const updataProductsData = async (req, res) => {
+export const updataProductsData = async (req, res, next) => {
   try {
     const { id } = req.params;
     const { name, slug } = req.body;
@@ -77,6 +77,6 @@ export const updataProductsData = async (req, res) => {
       message: "successfully update data",
     });
   } catch (error) {
-    console.log(`${error.message}`.bgRed.random);
+    next(error);
   }
 };

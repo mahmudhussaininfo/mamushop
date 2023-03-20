@@ -3,7 +3,9 @@ import dotenv from "dotenv";
 import colors from "colors";
 import cors from "cors";
 import productCatagoryRouter from "./routes/productCatagoryroute.js";
+import brandRouter from "./routes/brandRoute.js";
 import mongoDBConnect from "./config/db.js";
+import { errorHandler } from "./middlewares/errorHandle.js";
 
 // express init
 const app = express();
@@ -19,9 +21,13 @@ app.use(express.static("api/public"));
 
 // route setup
 app.use("/api/v1/product", productCatagoryRouter);
+app.use("/api/v1/product", brandRouter);
 
 // port init
 const Port = process.env.PORT || 9090;
+
+// Error Handler
+app.use(errorHandler);
 
 // listen
 app.listen(Port, () => {
