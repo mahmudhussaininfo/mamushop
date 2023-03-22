@@ -4,6 +4,7 @@ import colors from "colors";
 import cors from "cors";
 import productCatagoryRouter from "./routes/productCatagoryroute.js";
 import brandRouter from "./routes/brandRoute.js";
+import tagRouter from "./routes/tagRoute.js";
 import mongoDBConnect from "./config/db.js";
 import { errorHandler } from "./middlewares/errorHandle.js";
 
@@ -22,6 +23,7 @@ app.use(express.static("api/public"));
 // route setup
 app.use("/api/v1/product", productCatagoryRouter);
 app.use("/api/v1/product", brandRouter);
+app.use("/api/v1/product", tagRouter);
 
 // port init
 const Port = process.env.PORT || 9090;
