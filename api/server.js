@@ -5,6 +5,7 @@ import cors from "cors";
 import productCatagoryRouter from "./routes/productCatagoryroute.js";
 import brandRouter from "./routes/brandRoute.js";
 import tagRouter from "./routes/tagRoute.js";
+import productRouter from "./routes/productRouter.js";
 import mongoDBConnect from "./config/db.js";
 import { errorHandler } from "./middlewares/errorHandle.js";
 
@@ -21,6 +22,7 @@ app.use(cors());
 app.use(express.static("api/public"));
 
 // route setup
+app.use("/api/v1/product", productRouter);
 app.use("/api/v1/product", productCatagoryRouter);
 app.use("/api/v1/product", brandRouter);
 app.use("/api/v1/product", tagRouter);
