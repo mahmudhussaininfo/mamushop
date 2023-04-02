@@ -15,7 +15,7 @@ const storage = multer.diskStorage({
     }
     if (
       file.fieldname == "product-photo" ||
-      file.fieldname == "product-Gallery-photo"
+      file.fieldname == "product-gallery-photo"
     ) {
       cb(null, "api/public/products");
     }
@@ -33,7 +33,7 @@ export const multerProductMiddlewares = multer({ storage }).fields([
     maxCount: 1,
   },
   {
-    name: "product-Gallery-photo",
+    name: "product-gallery-photo",
     maxCount: 10,
   },
 ]);
