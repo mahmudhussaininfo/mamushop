@@ -1,0 +1,20 @@
+.homepage {
+  .header-title {
+    h2 {
+      text-align: center;
+      font-weight: 700;
+      font-size: 48px;
+      padding: 35px 0;
+    }
+  }
+  .main-header {
+    text-align: center;
+  }
+
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,27 @@
+.product-item {
+  width: 23%;
+  .product-price {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 15px;
+
+    .regular {
+      text-decoration: line-through;
+      font-weight: 300;
+    }
+    .sale {
+      font-weight: 600;
+    }
+  }
+  .product-button {
+    .button-card {
+      background-color: #46034a;
+      border: none;
+    }
+    .button-view {
+      background-color: #8c1b59;
+      color: #fff;
+      border: none;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.product-view {
+  display: flex;
+  gap: 30px;
+  .product-photo {
+    img {
+      width: 300px;
+      height: auto;
+    }
+  }
+  .product-view-price {
+    display: flex;
+    gap: 15px;
+    .regular {
+      text-decoration: line-through;
+      font-weight: 300;
+    }
+    .sale {
+      font-weight: 600;
+    }
+  }
+}

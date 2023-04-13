@@ -1,0 +1,30 @@
+.header {
+  .header-part {
+    display: flex;
+    align-items: center;
+    .logo-img {
+      img {
+        width: 180px;
+        height: auto;
+      }
+    }
+    .menu-item {
+      ul {
+        display: flex;
+        justify-content: end;
+        gap: 10px;
+
+        li {
+          padding: 20px 10px;
+          text-transform: uppercase;
+
+          a {
+            color: #000000;
+            font-weight: 500;
+            font-size: 25px;
+          }
+        }
+      }
+    }
+  }
+}
