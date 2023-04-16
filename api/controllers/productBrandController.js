@@ -1,4 +1,5 @@
 //init brand model
+import { createSlug } from "../helper/slugCreate.js";
 import brand from "../models/brand.js";
 
 // Get All Brands
@@ -17,14 +18,14 @@ export const getAllBrands = async (req, res, next) => {
 // Post All Brands
 export const postBrandsProduct = async (req, res, next) => {
   try {
-    const { name, slug } = req.body;
+    const { name } = req.body;
     const data = await brand.create({
       name,
-      slug,
+      slug: createSlug(name),
       photo: req.file.filename,
     });
     res.status(200).json({
-      brands: data,
+      brand: data,
       message: "successfully added brand data",
     });
   } catch (error) {
@@ -38,7 +39,7 @@ export const singleBrandProduct = async (req, res, next) => {
     const { slug } = req.params;
     const data = await brand.findOne({ slug });
     res.status(200).json({
-      brands: data,
+      brand: data,
       message: "successfully single brand data opened",
     });
   } catch (error) {
@@ -60,7 +61,7 @@ export const updateBrandProduct = async (req, res, next) => {
       { new: true }
     );
     res.status(200).json({
-      brands: data,
+      brand: data,
       message: "successfully updated brand data",
     });
   } catch (error) {
@@ -74,7 +75,7 @@ export const delateBrandProduct = async (req, res, next) => {
     const { id } = req.params;
     const data = await brand.findByIdAndDelete(id);
     res.status(200).json({
-      brands: data,
+      brand: data,
       message: "successfully Delated brand data",
     });
   } catch (error) {

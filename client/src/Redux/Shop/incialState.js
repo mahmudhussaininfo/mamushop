@@ -3,7 +3,7 @@ export const inicialState = {
   brands: [],
   tags: [],
   products: [],
+  loading: false,
   message: "",
   error: "",
-  loading: false,
 };
